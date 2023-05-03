@@ -77,6 +77,9 @@ def encode_sentence():
     # 进行哈夫曼编码
     huffman_dict = huffman_encode(letter_freq)
     sentence = input("请输入一句英文：")
+    print("录音中……")
+    print("录音完成")
+    print("开始译码")
     encoded_sentence = ''
     for char in sentence:
         if char in huffman_dict:
@@ -90,5 +93,6 @@ def encode_sentence():
 
 if __name__ == '__main__':
     encoded_sentence = encode_sentence()
-    print('编码后的字符串为：', encoded_sentence)
+    print('哈夫曼编码：', encoded_sentence)
+    print("译码结果为：")
     huffman_decode(encoded_sentence, huffman_dict=huffman_encode(letter_freq))
